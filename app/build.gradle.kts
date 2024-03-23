@@ -53,6 +53,8 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     // Retrofit Gson 转换器
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    // 如果你打算使用 Kotlin 协程
-    implementation("com.squareup.retrofit2:adapter-rxjava3:2.9.0")
+    // Kotlin 协程
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
+    //Kotlin支持 viewModelScope 的版本
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
 }
