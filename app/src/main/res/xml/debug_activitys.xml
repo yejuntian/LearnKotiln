@@ -7,4 +7,12 @@
             android:action="android.intent.action.VIEW"
             android:targetClass="studykotlin.dongnao.MainScopeActivity" />
     </Preference>
+
+    <Preference
+        android:summary="跳转委托MainScopeActivity2"
+        android:title="委托MainScope">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="studykotlin.dongnao.MainScopeActivity2" />
+    </Preference>
 </PreferenceScreen>
