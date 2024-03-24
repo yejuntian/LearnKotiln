@@ -15,4 +15,11 @@
             android:action="android.intent.action.VIEW"
             android:targetClass="studykotlin.dongnao.MainScopeActivity2" />
     </Preference>
+    <Preference
+        android:summary="跳转CoroutineExceptionHandlerActivity"
+        android:title="协程异常捕获">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="studykotlin.dongnao.CoroutineExceptionHandlerActivity" />
+    </Preference>
 </PreferenceScreen>
