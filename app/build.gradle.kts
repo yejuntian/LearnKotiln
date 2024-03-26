@@ -56,5 +56,7 @@ dependencies {
     // Kotlin 协程
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
     //Kotlin支持 viewModelScope 的版本
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    //Kotlin 反射库提供了运行时反射能力
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.8.22")
 }
