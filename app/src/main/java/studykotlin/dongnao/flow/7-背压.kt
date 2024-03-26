@@ -1,10 +1,12 @@
 package studykotlin.dongnao.flow
 
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.buffer
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.conflate
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.runBlocking
 import kotlin.system.measureTimeMillis
 
@@ -12,9 +14,13 @@ import kotlin.system.measureTimeMillis
  * 背压
  * 背压含义：水流收到和流动方向一致的压力。(比如：生产者生产的效率 > 消费者消费的效率)
  *
+ * 处理背压方案
+ * 1.使用缓存
  * buffer():并发运行流中发射的代码。
  * conflate():合并发射项，不对每个值进行处理。
  * collectLast():取消并重新发射最后一个值。
+ *
+ * 2.使用flowOn()
  * 当必须更改CoroutineDispatcher时，flowOn操作符使用了相同的缓存机制，
  * 但是buffer()函数显式的请求缓冲而'不改变执行上下文'
  *
@@ -32,6 +38,9 @@ fun main() {
 
     println("********** collectLast()取消并重新发送最后一个值 ************")
     backPressureCollectLast()
+
+    println("********** 使用flowOn处理背压 ************")
+    backPressureByFlowOn()
 
 }
 
@@ -83,6 +92,18 @@ fun backPressureCollectLast() = runBlocking {
     val times = measureTimeMillis {
         getFlowList()
             .conflate()
+            .collectLatest {
+                delay(300)
+                println("Collected $it ${Thread.currentThread().name}")
+            }
+    }
+    println("Collected cost time is $times ms")
+}
+
+fun backPressureByFlowOn() = runBlocking {
+    val times = measureTimeMillis {
+        getFlowList()
+            .flowOn(Dispatchers.IO)
             .collectLatest {
                 delay(300)
                 println("Collected $it ${Thread.currentThread().name}")
