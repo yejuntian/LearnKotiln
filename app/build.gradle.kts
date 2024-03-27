@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -49,14 +50,32 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
     // Retrofit 核心库
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     // Retrofit Gson 转换器
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    // Kotlin 协程
+
+    // 核心协程库
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+    // 协程库支持Android
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
+    // 如果你希望在测试中使用协程
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")
+
     //Kotlin支持 viewModelScope 的版本
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
     //Kotlin 反射库提供了运行时反射能力
     implementation("org.jetbrains.kotlin:kotlin-reflect:1.8.22")
+
+    // Room components
+    implementation("androidx.room:room-runtime:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:2.6.1")
+
+    // Navigation components
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
+
 }
