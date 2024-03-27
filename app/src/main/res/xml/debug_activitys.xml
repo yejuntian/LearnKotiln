@@ -1,25 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <Preference
+        android:key="MainScopeActivity"
         android:summary="跳转MainScopeActivity"
-        android:title="MainScope">
-        <intent
-            android:action="android.intent.action.VIEW"
-            android:targetClass="studykotlin.dongnao.MainScopeActivity" />
-    </Preference>
+        android:title="MainScope" />
 
     <Preference
+        android:key="MainScopeActivity2"
         android:summary="跳转委托MainScopeActivity2"
-        android:title="委托MainScope">
-        <intent
-            android:action="android.intent.action.VIEW"
-            android:targetClass="studykotlin.dongnao.MainScopeActivity2" />
-    </Preference>
+        android:title="委托MainScope" />
     <Preference
+        android:key="CoroutineExceptionHandlerActivity"
         android:summary="跳转CoroutineExceptionHandlerActivity"
-        android:title="协程异常捕获">
-        <intent
-            android:action="android.intent.action.VIEW"
-            android:targetClass="studykotlin.dongnao.CoroutineExceptionHandlerActivity" />
-    </Preference>
+        android:title="协程异常捕获" />
+
 </PreferenceScreen>
