@@ -19,4 +19,9 @@
         android:summary="Flow and download"
         android:title="使用Flow进行下载操作" />
 
+    <Preference
+        android:key="RoomUserActivity"
+        android:summary="Flow and Room"
+        android:title="Flow与Room应用" />
+
 </PreferenceScreen>

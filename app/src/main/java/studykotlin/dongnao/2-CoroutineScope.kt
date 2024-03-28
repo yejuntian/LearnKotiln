@@ -9,7 +9,6 @@ import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import java.lang.Exception
 
 /**
  * CoroutineScope:它会跟踪所有协程，同样可以取消由它启动的所有协程。
@@ -23,6 +22,12 @@ import java.lang.Exception
  *
  * 3.viewModelScope:
  * 只能在ViewModel中使用，绑定ViewModel生命周期。
+ *
+ * 解释如下：
+ * viewModelScope 是一个在 ViewModel 中预定义的协程作用域，它与 ViewModel 的生命周期紧密相关。
+ * 当 ViewModel 清除时（例如，当它的所在的 Activity 或 Fragment 完成时），
+ * viewModelScope 会自动取消其所有正在运行的协程。
+ * 这意味着你不需要手动管理 viewModelScope 的生命周期或取消它的协程。
  *
  * 4.lifecycleScope:
  * 只能在Activity、Fragment中使用，会绑定Activity和Fragment的生命周期。

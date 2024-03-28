@@ -33,6 +33,9 @@
         <activity
             android:name="studykotlin.dongnao.flow.DownLoadActivity"
             android:exported="true" />
+        <activity
+            android:name="studykotlin.dongnao.flow.RoomUserActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

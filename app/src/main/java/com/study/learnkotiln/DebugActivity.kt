@@ -9,6 +9,7 @@ import studykotlin.dongnao.CoroutineExceptionHandlerActivity
 import studykotlin.dongnao.MainScopeActivity
 import studykotlin.dongnao.MainScopeActivity2
 import studykotlin.dongnao.flow.DownLoadActivity
+import studykotlin.dongnao.flow.RoomUserActivity
 
 
 class DebugActivity : PreferenceActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
@@ -31,6 +32,10 @@ class DebugActivity : PreferenceActivity(), SharedPreferences.OnSharedPreference
         setupPreferenceClickListener(
             "DownLoadActivity",
             DownLoadActivity::class.java
+        )
+        setupPreferenceClickListener(
+            "RoomUserActivity",
+            RoomUserActivity::class.java
         )
     }
 
