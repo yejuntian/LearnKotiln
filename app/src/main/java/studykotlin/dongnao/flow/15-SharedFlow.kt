@@ -2,14 +2,11 @@ package studykotlin.dongnao.flow
 
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.lifecycleScope
 import com.study.learnkotiln.R
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
 import studykotlin.dongnao.viewmodel.NumberViewModel
+import studykotlin.dongnao.viewmodel.SharedFlowViewModel
 
 /**
  * 冷流还是热流
@@ -24,40 +21,33 @@ import studykotlin.dongnao.viewmodel.NumberViewModel
  *
  * SharedFlow:->类似BroadCastFlow允许有多个收集者，并可以同时收到数据
  * SharedFlow:会向使用收集值的所有方法发出数据。
- *
  */
 
 
-class NumberStateFlowActivity : AppCompatActivity() {
-    private var mEditResult: TextView? = null
-    private var mBtnPlus: Button? = null
-    private var mBtnSub: Button? = null
-    private val numberViewModel by viewModels<NumberViewModel>()
+class SharedFlowActivity : AppCompatActivity() {
+    private var mBtnStart: Button? = null
+    private var mBtnEnd: Button? = null
+    private val sharedFlowViewModel by viewModels<SharedFlowViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_stateflow)
+        setContentView(R.layout.activity_sharedflow)
 
         initView()
         initListener()
-        // 监听 StateFlow 的数据变化并更新 EditText
-        numberViewModel.numberStateFlow.onEach { value: Int ->
-            mEditResult?.text = "$value"
-        }.launchIn(lifecycleScope)
     }
 
     private fun initView() {
-        mEditResult = findViewById<TextView>(R.id.editNumber)
-        mBtnPlus = findViewById<Button>(R.id.btn_plus)
-        mBtnSub = findViewById<Button>(R.id.btn_sub)
+        mBtnStart = findViewById<Button>(R.id.btn_start)
+        mBtnEnd = findViewById<Button>(R.id.btn_end)
     }
 
     private fun initListener() {
-        mBtnPlus?.setOnClickListener {
-            numberViewModel.increment()
+        mBtnStart?.setOnClickListener {
+            sharedFlowViewModel.startRefresh()
         }
 
-        mBtnSub?.setOnClickListener {
-            numberViewModel.decrement()
+        mBtnEnd?.setOnClickListener {
+            sharedFlowViewModel.stopRefresh()
         }
     }
 }

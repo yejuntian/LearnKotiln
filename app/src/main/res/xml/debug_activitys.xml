@@ -9,6 +9,7 @@
         android:key="MainScopeActivity2"
         android:summary="跳转委托MainScopeActivity2"
         android:title="委托MainScope" />
+
     <Preference
         android:key="CoroutineExceptionHandlerActivity"
         android:summary="跳转CoroutineExceptionHandlerActivity"
@@ -33,5 +34,10 @@
         android:key="NumberStateFlowActivity"
         android:summary="StateFlow"
         android:title="StateFlow应用案例" />
+
+    <Preference
+        android:key="SharedFlowActivity"
+        android:summary="SharedFlow"
+        android:title="ShareFlow应用案例" />
 
 </PreferenceScreen>

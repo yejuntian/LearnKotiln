@@ -12,6 +12,7 @@ import studykotlin.dongnao.flow.ArticleActivity
 import studykotlin.dongnao.flow.DownLoadActivity
 import studykotlin.dongnao.flow.NumberStateFlowActivity
 import studykotlin.dongnao.flow.RoomUserActivity
+import studykotlin.dongnao.flow.SharedFlowActivity
 
 
 class DebugActivity : PreferenceActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
@@ -46,6 +47,10 @@ class DebugActivity : PreferenceActivity(), SharedPreferences.OnSharedPreference
         setupPreferenceClickListener(
             "NumberStateFlowActivity",
             NumberStateFlowActivity::class.java
+        )
+        setupPreferenceClickListener(
+            "SharedFlowActivity",
+            SharedFlowActivity::class.java
         )
     }
 
