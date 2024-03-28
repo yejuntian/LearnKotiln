@@ -24,4 +24,9 @@
         android:summary="Flow and Room"
         android:title="Flow与Room应用" />
 
+    <Preference
+        android:key="ArticleActivity"
+        android:summary="Flow and Retrofit"
+        android:title="Flow与Retrofit应用" />
+
 </PreferenceScreen>

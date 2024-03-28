@@ -1,7 +1,8 @@
-package studykotlin.dongnao
+package studykotlin.dongnao.net
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import studykotlin.dongnao.api.ArticleApi
 import studykotlin.dongnao.api.UserServiceApi
 
 object RetrofitClient {
@@ -11,4 +12,6 @@ object RetrofitClient {
         .build()
 
     val userServiceApi: UserServiceApi = retrofit.create(UserServiceApi::class.java)
+
+    val articleApi: ArticleApi = retrofit.create(ArticleApi::class.java)
 }

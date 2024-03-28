@@ -63,8 +63,13 @@ dependencies {
     // 如果你希望在测试中使用协程
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")
 
-    //Kotlin支持 viewModelScope 的版本
+    //ViewModel组件 Kotlin支持 viewModelScope 的版本
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    //LiveData组件
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
+    //使用 LiveData 的扩展函数
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
+
     //Kotlin 反射库提供了运行时反射能力
     implementation("org.jetbrains.kotlin:kotlin-reflect:1.8.22")
 

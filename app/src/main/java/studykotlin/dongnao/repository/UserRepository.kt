@@ -1,6 +1,6 @@
 package studykotlin.dongnao.repository
 
-import studykotlin.dongnao.RetrofitClient.userServiceApi
+import studykotlin.dongnao.net.RetrofitClient.userServiceApi
 import studykotlin.dongnao.api.User
 
 class UserRepository {

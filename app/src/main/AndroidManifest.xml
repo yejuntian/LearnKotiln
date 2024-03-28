@@ -36,6 +36,9 @@
         <activity
             android:name="studykotlin.dongnao.flow.RoomUserActivity"
             android:exported="true" />
+        <activity
+            android:name="studykotlin.dongnao.flow.ArticleActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
