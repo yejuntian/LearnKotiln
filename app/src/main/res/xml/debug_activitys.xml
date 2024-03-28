@@ -29,4 +29,9 @@
         android:summary="Flow and Retrofit"
         android:title="Flow与Retrofit应用" />
 
+    <Preference
+        android:key="NumberStateFlowActivity"
+        android:summary="StateFlow"
+        android:title="StateFlow应用案例" />
+
 </PreferenceScreen>
