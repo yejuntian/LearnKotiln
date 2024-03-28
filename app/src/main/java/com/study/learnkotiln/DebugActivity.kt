@@ -8,6 +8,7 @@ import android.preference.PreferenceActivity
 import studykotlin.dongnao.CoroutineExceptionHandlerActivity
 import studykotlin.dongnao.MainScopeActivity
 import studykotlin.dongnao.MainScopeActivity2
+import studykotlin.dongnao.flow.DownLoadActivity
 
 
 class DebugActivity : PreferenceActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
@@ -26,6 +27,10 @@ class DebugActivity : PreferenceActivity(), SharedPreferences.OnSharedPreference
         setupPreferenceClickListener(
             "CoroutineExceptionHandlerActivity",
             CoroutineExceptionHandlerActivity::class.java
+        )
+        setupPreferenceClickListener(
+            "DownLoadActivity",
+            DownLoadActivity::class.java
         )
     }
 

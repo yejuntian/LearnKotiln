@@ -14,4 +14,9 @@
         android:summary="跳转CoroutineExceptionHandlerActivity"
         android:title="协程异常捕获" />
 
+    <Preference
+        android:key="DownLoadActivity"
+        android:summary="Flow and download"
+        android:title="使用Flow进行下载操作" />
+
 </PreferenceScreen>
