@@ -43,52 +43,52 @@ android {
 dependencies {
 
     //noinspection GradleCompatible
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.11.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation(deps.androidx.coreKtx)
+    implementation(deps.androidx.appCompat)
+    implementation(deps.androidx.material)
+    implementation(deps.androidx.constraintLayout)
+    testImplementation(deps.test.junit)
+    androidTestImplementation(deps.test.androidx.junit)
+    androidTestImplementation(deps.test.androidx.espresso.core)
 
     // Retrofit 核心库
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation(deps.retrofit.retrofit_core)
     // Retrofit Gson 转换器
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation(deps.retrofit.retrofit_converter)
     //okhttp3
-    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation(deps.okhttp3.okhttp)
     //OkHttp3 的日志拦截器
-    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
-
+    implementation(deps.okhttp3.logging_interceptor)
 
     // 核心协程库
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+    implementation(deps.coroutines.core)
     // 协程库支持Android
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
+    implementation(deps.coroutines.android)
     // 如果你希望在测试中使用协程
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")
+    testImplementation(deps.coroutines.test)
 
     //ViewModel组件 Kotlin支持 viewModelScope 的版本
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation(deps.lifecycle.viewModelKtx)
     //LiveData组件
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
+    implementation(deps.lifecycle.liveDataKtx)
     //使用 LiveData 的扩展函数
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
+    implementation(deps.lifecycle.runtimeKtx)
 
     //Kotlin 反射库提供了运行时反射能力
-    implementation("org.jetbrains.kotlin:kotlin-reflect:1.8.22")
+    implementation(deps.test.kotlin_reflect)
 
     // Room components
-    implementation("androidx.room:room-runtime:2.6.1")
+    implementation(deps.room.room_runtime)
     //注解处理器处理 @Entity, @Dao, @Database 等注解，并生成 Room 数据库的相关代码，例如实体的 _Impl 类和数据库访问对象（DAO）的实现
     //noinspection KaptUsageInsteadOfKsp
-    kapt("androidx.room:room-compiler:2.6.1")
+    kapt(deps.room.room_compiler)
     // optional - Kotlin Extensions and Coroutines support for Room
-    implementation("androidx.room:room-ktx:2.6.1")
+    implementation(deps.room.room_ktx)
 
     // Navigation components
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
 
-    implementation(project(":lib_viewpager2"))
+    implementation(mviBase)
+    implementation(viewpager2)
 }
