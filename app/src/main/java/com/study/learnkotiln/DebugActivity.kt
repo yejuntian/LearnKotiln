@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceActivity
+import com.study.jetpack.mvi.MviExampleActivity
 import studykotlin.dongnao.CoroutineExceptionHandlerActivity
 import studykotlin.dongnao.MainScopeActivity
 import studykotlin.dongnao.MainScopeActivity2
@@ -51,6 +52,10 @@ class DebugActivity : PreferenceActivity(), SharedPreferences.OnSharedPreference
         setupPreferenceClickListener(
             "SharedFlowActivity",
             SharedFlowActivity::class.java
+        )
+        setupPreferenceClickListener(
+            "MviExampleActivity",
+            MviExampleActivity::class.java
         )
     }
 

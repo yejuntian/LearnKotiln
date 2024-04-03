@@ -55,6 +55,11 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     // Retrofit Gson 转换器
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    //okhttp3
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    //OkHttp3 的日志拦截器
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
 
     // 核心协程库
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
@@ -85,4 +90,5 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
 
+    implementation(project(":lib_viewpager2"))
 }

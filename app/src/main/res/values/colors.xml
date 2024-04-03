@@ -2,4 +2,54 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="color_FF66CCFF">#FF66CCFF</color>
+    <color name="color_FFEEEEEE">#FFEEEEEE</color>
+    <color name="color_FFEC5745">#FFEC5745</color>
+    <color name="color_FF5A00">#FF5A00</color>
+    <color name="color_FFFF3C00">#FFFF3C00</color>
+    <color name="color_FFEA2226">#FFEA2226</color>
+    <color name="color_FF4EBCD3">#FF4EBCD3</color>
+    <color name="color_FF33B5E5">#FF33B5E5</color>
+    <color name="color_FF49092">#FFF49092</color>
+    <color name="color_FF5B0F">#FF5B0F</color>
+    <color name="color_FF0066FF">#FF0066FF</color>
+    <color name="color_FFFFA500">#FFFFA500</color>
+    <color name="color_FFB5B5B6">#FFB5B5B6</color>
+    <color name="color_FF666667">#FF666667</color>
+    <color name="color_1AFFFFFF">#1AFFFFFF</color>
+    <color name="color_FF2DAFA3">#FF2DAFA3</color>
+    <color name="color_80000000">#80000000</color>
+    <color name="color_FFBABABA">#FFBABABA</color>
+    <color name="color_00000000">#00000000</color>
+    <color name="color_FF666666">#FF666666</color>
+    <color name="color_FF505050">#FF505050</color>
+    <color name="color_FFFECECEC">#FFECECEC</color>
+
+    <color name="color_FC7C7C7">#FFC7C7C7</color>
+    <color name="color_FA2E542">#FFA2E542</color>
+    <color name="color_F377CAF">#FF377CAF</color>
+    <color name="color_FBF9E5A">#FFBF9E5A</color>
+    <color name="color_FBBBBBB">#FFBBBBBB</color>
+    <color name="color_FF3F3F3">#FFF3F3F3</color>
+    <color name="color_F666666">#FF666666</color>
+    <color name="color_FEA2226">#FFEA2226</color>
+    <color name="color_FFFFFFB">#FFFFFFFB</color>
+    <color name="color_F888888">#FF888888</color>
+    <color name="color_FDDDDDD">#FFDDDDDD</color>
+    <color name="color_FF2F77B8">#FF2F77B8</color>
+    <color name="color_FA6463A">#FFA6463A</color>
+    <color name="color_F005084">#FF005084</color>
+    <color name="color_F24FF00">#FF24FF00</color>
+    <color name="color_F1B5D89">#FF1B5D89</color>
+    <color name="color_F2980B9">#FF2980B9</color>
+    <color name="color_F1B1C1F">#FF1B1C1F</color>
+    <color name="color_FFCB840">#FFFCB840</color>
+    <color name="color_FF68B2B">#FFF68B2B</color>
+
+    <color name="color_FFFFF86FC">#FFFF86FC</color>
+    <color name="color_FF6200EE">#FF6200EE</color>
+    <color name="color_FF3700B3">#FF3700B3</color>
+    <color name="color_FF03DAC5">#FF03DAC5</color>
+    <color name="color_FF018786">#FF018786</color>
+    <color name="color_FF000000">#FF000000</color>
 </resources>

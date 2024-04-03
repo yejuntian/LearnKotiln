@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MVPager2">
+        <!--指示器是否在Banner内部，默认是true-->
+        <attr name="indicator_inside_banner" format="boolean" />
+        <!--指示器容器高度-->
+        <attr name="indicator_bg_height" format="dimension" />
+        <!--指示器半径-->
+        <attr name="indicator_radius" format="dimension" />
+        <!--指示器Item间margin-->
+        <attr name="indicator_margin" format="dimension" />
+        <!--选中的指示器资源样式-->
+        <attr name="indicator_drawable_selected" format="reference" />
+        <!--未选中的指示器资源样式-->
+        <attr name="indicator_drawable_unselected" format="reference" />
+        <!--指示器的宽高比-->
+        <attr name="indicator_w_h_ratio" format="float" />
+        <attr name="indicator_gravity" format="enum">
+            <enum name="top" value="0" />
+            <enum name="center" value="1" />
+            <enum name="bottom" value="2" />
+        </attr>
+    </declare-styleable>
+</resources>

@@ -16,7 +16,7 @@ object DownLoadManager {
             val request = Request.Builder().url(url).get().build()
             val response = OkHttpClient.Builder().build().newCall(request).execute()
             if (response.isSuccessful) {
-                response.body()!!.let {
+                response.body!!.let {
                     val total = it.contentLength()
                     //文件读写操作
                     file.outputStream().use { fileOutputStream ->

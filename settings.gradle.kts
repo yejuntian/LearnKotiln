@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "LearnKotiln"
 include(":app")
- 
+include(":lib_viewpager2")
