@@ -22,7 +22,7 @@ import studykotlin.dongnao.viewmodel.NumberViewModel
  * StateFlow 是 Flow 的一个特殊类型，它是专门设计来保存状态并观察状态变化的。它是热流（hot flow），
  * 意味着它始终有一个当前值，且会在新的观察者开始收集时立即接收最新值。
  *
- * 特点：
+ * StateFlow特点：
  * 1.总是有一个初始值。
  * 2.只会发射新的状态（如果新的值与前一个值相同，则不会发射）。
  * 3.StateFlow 的收集器总是立即接收到最近一次发射的值。
@@ -35,7 +35,7 @@ import studykotlin.dongnao.viewmodel.NumberViewModel
  * SharedFlow
  * SharedFlow 是一个更通用的响应式流类型，它允许配置多种行为，如缓冲、回放和并发更新。
  *
- * 特点：
+ * SharedFlow特点：
  * 1.可以配置回放缓冲区（replay cache），它可以保存一定数量的最新值，
  * 并在新的收集器开始收集时重播这些值。
  * 2.可以配置额外的属性，如缓冲大小、回放策略和并发更新策略。
@@ -46,11 +46,19 @@ import studykotlin.dongnao.viewmodel.NumberViewModel
  *2.适合需要更复杂配置的场景，如需要保留多个最新值的情况。
  *3.通常用于代替 EventBus 或 BroadcastChannel。
  *
- * 使用场景比较
+ * StateFlow 和 SharedFlow使用场景比较
  * 1.如果你需要表示和观察应用的状态（通常是 UI 状态），
  * 并且只关心最新的状态值，那么 StateFlow 是一个很好的选择。
  * 2.如果你需要处理事件流（如点击事件、网络响应等），
  * 并且可能需要保留和重播多个事件，那么 SharedFlow 更加适合。
+ *
+ *
+ * Channel特点:
+ * 1.Channel是一种基于生产者-消费者模型的通道，用于在协程之间传递数据。
+ * 2.可以通过send和receive方法在通道中发送和接收数据。
+ * 3.可以是有限的或无限的，可以设置缓冲区大小。
+ * 4.可以使用close方法关闭通道。
+ * 5.适用于多个生产者和消费者之间的数据传输。
  *
  */
 
