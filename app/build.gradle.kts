@@ -26,6 +26,13 @@ android {
                 "proguard-rules.pro"
             )
         }
+
+        getByName("debug") {
+            buildConfigField("Boolean", "DEBUG_MODE", "true")
+        }
+        getByName("release") {
+            buildConfigField("Boolean", "DEBUG_MODE", "false")
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -37,6 +44,7 @@ android {
     //添加dataBing库支持
     buildFeatures {
         dataBinding = true
+        buildConfig = true
     }
 }
 
