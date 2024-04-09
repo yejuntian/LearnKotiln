@@ -3,9 +3,7 @@ package com.study.mvi
 import android.os.Build
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.study.jetpack.mvi.exetends.debugCheckImmediateMainDispatcher
-import com.study.learnkotiln.BuildConfig
-import com.study.timber.log.Timber
+import com.study.mvi.exetends.debugCheckImmediateMainDispatcher
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.onFailure
 import kotlinx.coroutines.flow.Flow
@@ -16,6 +14,7 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.shareIn
+import timber.log.Timber
 import java.util.concurrent.atomic.AtomicInteger
 
 /**
@@ -79,7 +78,7 @@ abstract class AbstractMviViewModel<I : MviIntent, S : MviViewState, E : MviSing
 
     // 使用 viewModelScope 的 Flow 扩展函数.
     protected fun <T> Flow<T>.debugLog(subject: String): Flow<T> =
-        if (BuildConfig.DEBUG_MODE) {
+        if (BuildConfig.DEBUG) {
             onEach {
                 Timber.tag(logTag).d(">> $subject: $it")
             }
@@ -93,7 +92,7 @@ abstract class AbstractMviViewModel<I : MviIntent, S : MviViewState, E : MviSing
      * 并且使用 by self 关键字表示委托给 self 对象，也就是说内部类会继承 self 对象的所有属性和方法
      */
     protected fun <T> SharedFlow<T>.debugLog(subject: String): SharedFlow<T> =
-        if (BuildConfig.DEBUG_MODE) {
+        if (BuildConfig.DEBUG) {
             val self = this
             object : SharedFlow<T> by self {
                 val subscriberCount = AtomicInteger(0)

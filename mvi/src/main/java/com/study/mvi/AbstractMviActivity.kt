@@ -4,10 +4,10 @@ import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.study.jetpack.mvi.exetends.debugCheckImmediateMainDispatcher
+import com.study.mvi.exetends.debugCheckImmediateMainDispatcher
+import com.study.mvi.exetends.flowWithLifecycle2
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import org.ninetripods.mq.study.kotlin.ktx.flowWithLifecycle2
 
 abstract class AbstractMviActivity<
         I : MviIntent,

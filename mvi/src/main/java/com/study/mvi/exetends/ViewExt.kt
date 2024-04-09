@@ -1,4 +1,4 @@
-package org.ninetripods.mq.study.kotlin.ktx
+package com.study.mvi.exetends
 
 import android.app.Activity
 import android.app.Dialog

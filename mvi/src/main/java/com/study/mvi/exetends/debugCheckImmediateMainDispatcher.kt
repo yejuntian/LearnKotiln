@@ -1,9 +1,9 @@
-package com.study.jetpack.mvi.exetends
+package com.study.mvi.exetends
 
-import com.study.learnkotiln.BuildConfig
-import com.study.timber.log.Timber
+import com.study.mvi.BuildConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.currentCoroutineContext
+import timber.log.Timber
 import kotlin.coroutines.ContinuationInterceptor
 
 suspend fun debugCheckImmediateMainDispatcher() {

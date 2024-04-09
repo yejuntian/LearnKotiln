@@ -1,4 +1,4 @@
-package org.ninetripods.mq.study.kotlin.ktx
+package com.study.mvi.exetends
 
 import android.app.Activity
 import android.content.Context
@@ -7,7 +7,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
-import com.study.MyApplication
 
 /**
  * Toast扩展函数
@@ -17,7 +16,7 @@ fun Context.showToast(message: String, duration: Int = Toast.LENGTH_SHORT) {
 }
 
 fun showToast(message: String, duration: Int = Toast.LENGTH_SHORT) {
-    Toast.makeText(MyApplication.getApplication(), message, duration).show()
+//    Toast.makeText(MyApplication.getApplication(), message, duration).show()
 }
 
 fun Context.log(message: String) {

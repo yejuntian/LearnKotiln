@@ -1,11 +1,14 @@
-package org.ninetripods.mq.study.kotlin.ktx
+package com.study.mvi.exetends
 
+import android.text.Editable
+import android.text.TextWatcher
+import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.*
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kotlin.reflect.KProperty1
@@ -90,4 +93,29 @@ fun <T> Flow<T>.flowOnSingleLifecycle(
     }
     lastValue = null
     close()
+}
+
+/**
+ * callbackFlow 构建器用于创建一个 Flow，我们在其中定义了一个 TextWatcher 并将其添加到 TextView 上。
+ * 在 TextWatcher 的 afterTextChanged 方法中，我们使用 trySend 将变化后的文本发送到流中。
+ *
+ * awaitClose 被调用以确保当流的收集被取消时，我们可以清理资源，
+ * 也就是移除 TextWatcher。
+ */
+private fun TextView.textWatchFlow() = callbackFlow<String> {
+    val textWatcher: TextWatcher = object : TextWatcher {
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+        override fun afterTextChanged(s: Editable?) {
+            // 当文本变化时，将新的文本发送到流中
+            trySend(s.toString())
+        }
+    }
+    addTextChangedListener(textWatcher)
+    //当流收集取消时，移除文本变化监听
+    awaitClose {
+        removeTextChangedListener(textWatcher)
+    }
 }
