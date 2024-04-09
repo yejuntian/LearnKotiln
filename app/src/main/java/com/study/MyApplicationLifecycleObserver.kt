@@ -5,7 +5,7 @@ import android.util.Log
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
-import org.ninetripods.mq.study.kotlin.ktx.showToast
+import com.study.mvi.exetends.showToast
 
 /**
  * 监听Application的生命周期，可以用来判断应用前后台判断

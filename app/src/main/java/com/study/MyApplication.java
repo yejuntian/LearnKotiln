@@ -6,6 +6,7 @@ import android.content.Context;
 import androidx.lifecycle.ProcessLifecycleOwner;
 
 import com.study.jetpack.mvi.net.RetrofitUtil;
+import com.study.mvi.utils.ObjectStore;
 
 public class MyApplication extends Application {
 
@@ -20,6 +21,7 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         application = this;
+        ObjectStore.INSTANCE.setContext(this);
         //初始化Retrofit
         RetrofitUtil.INSTANCE.initRetrofit();
         //基于Lifecycle，监听Application的生命周期

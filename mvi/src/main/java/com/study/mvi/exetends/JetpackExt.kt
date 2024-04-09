@@ -59,7 +59,7 @@ inline fun <T, V> Flow<T>.flowWithLifecycle2(
     prop1: KProperty1<T, V>,
     crossinline block: suspend CoroutineScope.(V) -> Unit,
 ) = lifecycleOwner.lifecycleScope.launch {
-    //前后台切换时可以重复订阅数据。如：Lifecycle.State是STARTED，那么在生命周期进入 STARTED 状态时开始任务，在 STOPED 状态时停止订阅
+    //前后台切换时可以重复订阅数据。如：Lifecycle.State是STARTED，那么在生命周期进入 STARTED 状态时开始任务，在 STOP 状态时停止订阅
     flowOnSingleLifecycle(lifecycleOwner.lifecycle, minActiveState)
         .map { prop1.get(it) }
         .collect { block(it) }
@@ -102,7 +102,7 @@ fun <T> Flow<T>.flowOnSingleLifecycle(
  * awaitClose 被调用以确保当流的收集被取消时，我们可以清理资源，
  * 也就是移除 TextWatcher。
  */
-private fun TextView.textWatchFlow() = callbackFlow<String> {
+fun TextView.textWatchFlow() = callbackFlow<String> {
     val textWatcher: TextWatcher = object : TextWatcher {
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 

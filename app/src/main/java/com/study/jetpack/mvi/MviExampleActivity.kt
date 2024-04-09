@@ -12,11 +12,11 @@ import com.study.jetpack.mvi.adapter.RankAdapter
 import com.study.jetpack.mvi.base.LoadUiState
 import com.study.jetpack.mvi.viewmodel.MViewModel
 import com.study.learnkotiln.R
+import com.study.mvi.exetends.flowWithLifecycle2
+import com.study.mvi.exetends.id
+import com.study.mvi.exetends.showToast
+import com.study.mvi.exetends.visible
 import org.ninetripods.lib_viewpager2.MVPager2
-import org.ninetripods.mq.study.kotlin.ktx.flowWithLifecycle2
-import org.ninetripods.mq.study.kotlin.ktx.id
-import org.ninetripods.mq.study.kotlin.ktx.showToast
-import org.ninetripods.mq.study.kotlin.ktx.visible
 
 
 class MviExampleActivity : BaseMviActivity() {
