@@ -4,14 +4,15 @@ import android.os.Bundle
 import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
+import com.study.jetpack.mvi.util.WeakReferenceHandler
 import org.ninetripods.mq.study.jetpack.base.widget.StatusViewOwner
 
 /**
  * Mvi基类
  */
 abstract class BaseMviActivity : AppCompatActivity() {
-
     protected lateinit var mStatusViewUtil: StatusViewOwner
+    val weakReferenceHandler = WeakReferenceHandler()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,5 +50,10 @@ abstract class BaseMviActivity : AppCompatActivity() {
      */
     open fun getStatusOwnerView(): View? {
         return null
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        weakReferenceHandler.clearListeners()
     }
 }

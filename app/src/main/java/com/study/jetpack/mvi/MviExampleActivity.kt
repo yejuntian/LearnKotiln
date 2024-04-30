@@ -45,7 +45,7 @@ class MviExampleActivity : BaseMviActivity() {
 
     override fun initEvents() {
         registerEvent()
-        mBtnQuest.setOnClickListener {
+        weakReferenceHandler.setOnClickListener(mBtnQuest) {
             mViewModel.showToast() //一次性消费
             mViewModel.loadBannerData()
             mViewModel.loadDetailData()
