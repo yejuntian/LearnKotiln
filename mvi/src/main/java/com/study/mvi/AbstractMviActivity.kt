@@ -30,7 +30,7 @@ abstract class AbstractMviActivity<
             render(it)
         }
 
-        //发射单个事件
+        //observe single event
         viewModel.singleEvent.flowWithLifecycle2(this) {
             debugCheckImmediateMainDispatcher()
             handleSingleEvent(it)
