@@ -11,7 +11,7 @@ android {
     defaultConfig {
         applicationId = "com.study.learnkotiln"
         minSdk = 21
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -99,4 +99,5 @@ dependencies {
 
     implementation(mviBase)
     implementation(viewpager2)
+    implementation(project(":flutter"))
 }
