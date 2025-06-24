@@ -45,4 +45,9 @@
         android:summary="MVI模式"
         android:title="MVI应用案例" />
 
+    <Preference
+        android:key="FlutterHybridActivity"
+        android:summary="Flutter混合开发"
+        android:title="Flutter和Android混合开发" />
+
 </PreferenceScreen>

@@ -49,6 +49,15 @@
         <activity
             android:name="com.study.jetpack.mvi.MviExampleActivity"
             android:exported="true" />
+        <activity
+            android:name="com.study.flutterhybrid.MainFlutterActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.study.flutterhybrid.SingleFlutterViewActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.study.flutterhybrid.MultiFlutterViewActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
