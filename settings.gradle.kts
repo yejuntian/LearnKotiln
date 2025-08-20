@@ -25,3 +25,4 @@ val flutterGroovy = File(rootDir, "flutter_zero/.android/include_flutter.groovy"
 if (flutterGroovy.exists()) {
     apply(from = flutterGroovy)
 }
+include(":learncompose")
