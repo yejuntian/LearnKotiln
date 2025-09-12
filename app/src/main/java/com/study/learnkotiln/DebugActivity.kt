@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.preference.PreferenceActivity
 import com.study.flutterhybrid.MainFlutterActivity
 import com.study.flutterhybrid.SingleFlutterViewActivity
+import com.study.flutterhybrid.channel.FlutterMessageChannelActivity
 import com.study.jetpack.mvi.MviExampleActivity
 import studykotlin.dongnao.CoroutineExceptionHandlerActivity
 import studykotlin.dongnao.MainScopeActivity
@@ -62,6 +63,10 @@ class DebugActivity : PreferenceActivity(), SharedPreferences.OnSharedPreference
         setupPreferenceClickListener(
             "FlutterHybridActivity",
             MainFlutterActivity::class.java
+        )
+        setupPreferenceClickListener(
+            "FlutterMessageChannelActivity",
+            FlutterMessageChannelActivity::class.java
         )
     }
 

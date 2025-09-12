@@ -49,5 +49,9 @@
         android:key="FlutterHybridActivity"
         android:summary="Flutter混合开发"
         android:title="Flutter和Android混合开发" />
+    <Preference
+        android:key="FlutterMessageChannelActivity"
+        android:summary="Flutter通信混合开发_持续通信"
+        android:title="Flutter和Android持续通信" />
 
 </PreferenceScreen>

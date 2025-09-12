@@ -58,6 +58,9 @@
         <activity
             android:name="com.study.flutterhybrid.MultiFlutterViewActivity"
             android:exported="true" />
+        <activity
+            android:name="com.study.flutterhybrid.channel.FlutterMessageChannelActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

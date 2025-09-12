@@ -1,12 +1,17 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+import 'EventChannel.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   // 获取 Android 原生传入的 initialRoute（默认是 '/'）
-  final route = WidgetsBinding.instance.platformDispatcher.defaultRouteName;
+  final route = window.defaultRouteName;
   print("🟡 Flutter started with route: $route");
 
-  runApp(MyApp(initialRoute: route));
+  runApp(MyApp(initialRoute: window.defaultRouteName));
 }
 
 class MyApp extends StatelessWidget {
@@ -17,8 +22,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Counter Demo',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      title: 'Flutter混合开发',
+      theme: ThemeData(primarySwatch: Colors.cyan),
       home: _getHomeByRoute(initialRoute),
     );
   }
@@ -31,6 +36,8 @@ class MyApp extends StatelessWidget {
         return const CounterPage();
       case 'route2':
         return const MyApp2();
+      case 'eventChannel':
+        return EventChannelPage(initParam: route);
       default:
         return const CounterPage(); // 默认就是计数页面
     }
