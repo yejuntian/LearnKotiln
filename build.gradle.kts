@@ -3,3 +3,15 @@ plugins {
     id("com.android.application") version "8.7.3" apply false
     id("org.jetbrains.kotlin.android") version "1.9.23" apply false
 }
+
+subprojects {
+    if (name == "flutter") {
+        afterEvaluate {
+            extensions.configure<com.android.build.api.dsl.LibraryExtension>("android") {
+                defaultConfig {
+                    minSdk = 21
+                }
+            }
+        }
+    }
+}
