@@ -185,4 +185,66 @@
 4. 风险提示：如有潜在问题，提前说明
 5. 等待确认：明确询问用户是否同意执行
 
+## 十、交付流程（对接 android-delivery-skills）
+
+本项目使用 `android-delivery-skills` 跑需求交付（规则归 skill 仓库，本节只声明本项目对接方式）。
+
+### 文档布局
+
+交付文档放在 `document/<日期-英文名>/`（跟项目走，git 跟踪、可 commit），不污染代码 diff（`check-env` 只检查代码工作区，`delivery_gate` 摘要已排除 document/）：
+
+```text
+LearnKotiln/
+└── document/
+    └── 2026-07-25-<需求名>/
+        ├── requirement.md          ← 需求事实源（docx 自动转写为 md）
+        ├── 续接指南.md / 实施计划.md / 协作待办.md
+        ├── plan/ review/ decisions/
+        ├── api/ ui/ config/ issues/
+        ├── test-cases/              ← test-mapping.json、需求修订、追溯表
+        ├── test-results/            ← 交付结论.md、delivery-result.json
+        └── .state/                  ← 机器状态（基线/快照/route/证据）
+```
+
+### 流程命令（全程带 --config）
+
+```bash
+# 1. 理解需求（docx 自动转 md，拆 AC+场景）
+python3 <skill>/scripts/delivery.py init --config profiles/learnkotiln.yaml
+
+# 2. 建代码基线（当前 HEAD，document/ 改动不算脏）
+python3 <skill>/scripts/delivery.py check-env --config profiles/learnkotiln.yaml
+
+# 3. 确认需求修订（每答案先写回 requirement.md）
+python3 <skill>/scripts/delivery.py confirm-requirement-update --config profiles/learnkotiln.yaml
+
+# 4. 确认计划（生成收据，未确认不得编码）
+python3 <skill>/scripts/delivery.py confirm-plan --config profiles/learnkotiln.yaml
+
+# 5. 登记测试映射（每义务填 test_ids，回填 CURRENT）
+python3 <skill>/scripts/delivery.py init-test-mapping --config profiles/learnkotiln.yaml
+
+# 6. 最终交付（路由+门禁，用户明确要求最终检查时才跑）
+python3 <skill>/scripts/delivery.py route --config profiles/learnkotiln.yaml
+python3 <skill>/scripts/delivery_gate.py validate --config profiles/learnkotiln.yaml
+```
+
+### 项目编码增量（skill 通用层没有，本项目特有）
+
+下列纪律是本项目对编码的额外要求，skill 共享规则未覆盖：
+
+1. **爆炸半径隔离**：严禁为业务需求擅改全局 `BaseActivity/BaseFragment` 或 Core 组件，未知风险隔离在当前 Feature 模块内。
+2. **绝对契约主义**：解析后端 DTO，除非接口明确标必填，否则全用 `String?`，不替后端兜底、不脑补字段必下发。
+3. **防御性 fail-fast**：核心业务节点用 `requireNotNull`/`check` 断言；`when`/枚举必须 `else -> UNKNOWN`，防未知枚举崩溃。
+4. **动态内容校验**：列表/分页/滚动必须校验复用错位、异步乱序、状态过期、越界。
+
+### 续接旧需求
+
+续接不往旧目录塞内容（test-mapping/snapshot/result 会冲突）。新建 `document/<新日期>-<需求名>/`，requirement.md 注明"关联需求：续接 <旧目录>"，代码基线用 `check-env --new-requirement` 建当前 HEAD。
+
+### 机器状态隔离
+
+状态在 `document/<需求>/.state/`，不再写全局 `~/.local/state/`。换需求即换目录，物理隔离，无跨需求残留。
+
+
 
